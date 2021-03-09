@@ -27,7 +27,9 @@ function TodoTable() {
     }
 
     function prevDay() {
-        setDateObj(dateObj.setDate(dateObj.getDate() - 1));
+        let auxDate = new Date(dateObj.getTime());
+        auxDate.setDate(auxDate.getDate() - 1);
+        setDateObj(auxDate);
     }
     return (
         <main id="main-container">
