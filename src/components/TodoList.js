@@ -29,8 +29,25 @@ function TodoList({ day }) {
         setTodos(updatedTodos);
     };
 
+    const isPast = (aDate) => {
+        let dateArr = aDate.split("/").map((item) => parseInt(item));
+        let todayDate = new Date()
+            .toLocaleDateString()
+            .split("/")
+            .map((item) => parseInt(item));
+
+        for (let i = 2; i >= 0; i--) {
+            if (todayDate[i] < dateArr[i]) return false;
+        }
+
+        return true;
+    };
+
     return (
-        <div id="day-container">
+        <div
+            id="day-container"
+            className={isPast(day.toLocaleDateString()) ? "past" : ""}
+        >
             <h1>{day.toLocaleDateString("en-US", { weekday: "long" })}</h1>
             <h2>{day.toLocaleDateString()}</h2>
             <TodoForm onSubmit={addTodo} id={idCount} />
