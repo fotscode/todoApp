@@ -2,16 +2,6 @@ import React, { useState, useEffect } from "react";
 import TodoList from "./TodoList";
 
 function TodoTable() {
-    let days = [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday",
-    ];
-
     const [dateObj, setDateObj] = useState(new Date());
 
     let dateArray = getDaysArray();
@@ -24,12 +14,9 @@ function TodoTable() {
         let arrOfDates = [];
         let auxDate = new Date(dateObj.getTime());
         for (let i = 0; i < 4; i++) {
-            arrOfDates.push(
-                auxDate.toLocaleDateString("en-US", { weekday: "long" })
-            );
+            arrOfDates.push(new Date(auxDate.getTime()));
             auxDate.setDate(auxDate.getDate() + 1);
         }
-        console.log(arrOfDates);
         return arrOfDates;
     }
 

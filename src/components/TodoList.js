@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 
-function TodoList({ day, date }) {
+function TodoList({ day }) {
     const [todos, setTodos] = useState([]);
     const [idCount, setId] = useState(0);
 
@@ -31,8 +31,8 @@ function TodoList({ day, date }) {
 
     return (
         <div id="day-container">
-            <h1>{day}</h1>
-            <h2>{date}</h2>
+            <h1>{day.toLocaleDateString("en-US", { weekday: "long" })}</h1>
+            <h2>{day.toLocaleDateString()}</h2>
             <TodoForm onSubmit={addTodo} id={idCount} />
             <div id="todo-container">
                 <Todo
