@@ -73,10 +73,16 @@
     outline: none;
 }
 
-header {
-    font-family: Bebas Neue;
-    font-size: 2rem;
+h1 {
+    font-family: Bebas Neue, sans-serif;
     text-align: center;
+    font-size: 2.5rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1rem;
+    font-family: Roboto, sans-serif;
 }
 
 .edit-icon {
