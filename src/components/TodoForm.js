@@ -12,7 +12,6 @@ function TodoForm(props) {
         props.onSubmit({
             id: props.id,
             text: input,
-            date: props.date,
         });
 
         setInput("");
