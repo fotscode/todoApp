@@ -1,16 +1,7 @@
-import React, { useState } from "react";
-import TodoForm from "./TodoForm";
+import React from "react";
 import { BsTrash } from "react-icons/bs";
-import { MdModeEdit } from "react-icons/md";
 
 function Todo({ todos, completeTodo, removeTodo }) {
-    const [edit, setEdit] = useState({
-        id: null,
-        value: "",
-    });
-
-    console.log(todos);
-
     return todos.map((todo, index) => (
         <div
             className={todo.isComplete ? "todo-row complete" : "todo-row"}
@@ -24,7 +15,6 @@ function Todo({ todos, completeTodo, removeTodo }) {
                     className="delete-icon"
                     onClick={() => removeTodo(todo.id)}
                 />
-                <MdModeEdit className="edit-icon" />
             </div>
         </div>
     ));
