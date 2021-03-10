@@ -13,6 +13,7 @@ function TodoTable() {
     function getDaysArray() {
         let arrOfDates = [];
         let auxDate = new Date(dateObj.getTime());
+        auxDate.setDate(auxDate.getDate() - 1);
         for (let i = 0; i < 4; i++) {
             arrOfDates.push(new Date(auxDate.getTime()));
             auxDate.setDate(auxDate.getDate() + 1);

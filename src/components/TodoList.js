@@ -3,19 +3,37 @@ import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 
 function TodoList({ day }) {
-    const [todos, setTodos] = useState([]);
+    const searchStorage = () => {
+        let storage = JSON.parse(
+            localStorage.getItem(day.toLocaleDateString())
+        );
+        if (storage) return storage;
+        return [];
+    };
+
+    const [todos, setTodos] = useState(searchStorage);
     const [idCount, setId] = useState(0);
 
     const addTodo = (todo) => {
         if (!todo.text || /^\s*$/.test(todo.text)) return;
         const newTodos = [...todos, todo];
+        localStorage.setItem(
+            day.toLocaleDateString(),
+            JSON.stringify(newTodos)
+        );
         setTodos(newTodos);
         setId(idCount + 1);
-        console.log(newTodos);
     };
 
     const removeTodo = (id) => {
         let removeArr = [...todos].filter((todo) => todo.id !== id);
+        localStorage.setItem(
+            day.toLocaleDateString(),
+            JSON.stringify(removeArr)
+        );
+
+        if (!removeArr.length)
+            localStorage.removeItem(day.toLocaleDateString());
         setTodos(removeArr);
     };
 
@@ -26,6 +44,10 @@ function TodoList({ day }) {
             }
             return todo;
         });
+        localStorage.setItem(
+            day.toLocaleDateString(),
+            JSON.stringify(updatedTodos)
+        );
         setTodos(updatedTodos);
     };
 
@@ -35,6 +57,8 @@ function TodoList({ day }) {
             .toLocaleDateString()
             .split("/")
             .map((item) => parseInt(item));
+
+        if (dateArr[0] === todayDate[0]) return false;
 
         for (let i = 2; i >= 0; i--) {
             if (todayDate[i] < dateArr[i]) return false;

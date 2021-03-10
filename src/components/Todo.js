@@ -8,6 +8,9 @@ function Todo({ todos, completeTodo, removeTodo }) {
         id: null,
         value: "",
     });
+
+    console.log(todos);
+
     return todos.map((todo, index) => (
         <div
             className={todo.isComplete ? "todo-row complete" : "todo-row"}
