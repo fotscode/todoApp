@@ -11,8 +11,20 @@ function TodoList({ day }) {
         return [];
     };
 
+    const lookMaxId = () => {
+        let storage = JSON.parse(
+            localStorage.getItem(day.toLocaleDateString())
+        );
+        if (!storage) return 0;
+        let max = -1;
+        for (let item of storage) {
+            if (item.id > max) max = item.id;
+        }
+        return max + 1;
+    };
+
     const [todos, setTodos] = useState(searchStorage);
-    const [idCount, setId] = useState(0);
+    const [idCount, setId] = useState(lookMaxId);
 
     const addTodo = (todo) => {
         if (!todo.text || /^\s*$/.test(todo.text)) return;
