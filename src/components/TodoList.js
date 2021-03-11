@@ -2,18 +2,18 @@ import React, { useState } from "react";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
 
-function TodoList({ day }) {
-    const searchStorage = () => {
+function TodoList({ dateProp }) {
+    const searchStorage = (date) => {
         let storage = JSON.parse(
-            localStorage.getItem(day.toLocaleDateString())
+            localStorage.getItem(date.toLocaleDateString())
         );
         if (storage) return storage;
         return [];
     };
 
-    const lookMaxId = () => {
+    const lookMaxId = (date) => {
         let storage = JSON.parse(
-            localStorage.getItem(day.toLocaleDateString())
+            localStorage.getItem(date.toLocaleDateString())
         );
         if (!storage) return 0;
         let max = -1;
@@ -23,14 +23,20 @@ function TodoList({ day }) {
         return max + 1;
     };
 
-    const [todos, setTodos] = useState(searchStorage);
-    const [idCount, setId] = useState(lookMaxId);
+    const [dateState, setDate] = useState(dateProp);
+    const [todos, setTodos] = useState(searchStorage(dateState));
+    const [idCount, setId] = useState(lookMaxId(dateProp));
+
+    if (dateState !== dateProp) {
+        setTodos(searchStorage(dateProp));
+        setDate(dateProp);
+    }
 
     const addTodo = (todo) => {
         if (!todo.text || /^\s*$/.test(todo.text)) return;
         const newTodos = [...todos, todo];
         localStorage.setItem(
-            day.toLocaleDateString(),
+            dateState.toLocaleDateString(),
             JSON.stringify(newTodos)
         );
         setTodos(newTodos);
@@ -40,12 +46,12 @@ function TodoList({ day }) {
     const removeTodo = (id) => {
         let removeArr = [...todos].filter((todo) => todo.id !== id);
         localStorage.setItem(
-            day.toLocaleDateString(),
+            dateState.toLocaleDateString(),
             JSON.stringify(removeArr)
         );
 
         if (!removeArr.length)
-            localStorage.removeItem(day.toLocaleDateString());
+            localStorage.removeItem(dateState.toLocaleDateString());
         setTodos(removeArr);
     };
 
@@ -57,7 +63,7 @@ function TodoList({ day }) {
             return todo;
         });
         localStorage.setItem(
-            day.toLocaleDateString(),
+            dateState.toLocaleDateString(),
             JSON.stringify(updatedTodos)
         );
         setTodos(updatedTodos);
@@ -82,10 +88,12 @@ function TodoList({ day }) {
     return (
         <div
             id="day-container"
-            className={isPast(day.toLocaleDateString()) ? "past" : ""}
+            className={isPast(dateState.toLocaleDateString()) ? "past" : ""}
         >
-            <h1>{day.toLocaleDateString("en-US", { weekday: "long" })}</h1>
-            <h2>{day.toLocaleDateString()}</h2>
+            <h1>
+                {dateState.toLocaleDateString("en-US", { weekday: "long" })}
+            </h1>
+            <h2>{dateState.toLocaleDateString()}</h2>
             <TodoForm onSubmit={addTodo} id={idCount} />
             <div id="todo-container">
                 <Todo
