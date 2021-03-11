@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { AiOutlineArrowLeft } from "react-icons/ai";
+import { AiOutlineArrowRight } from "react-icons/ai";
 import TodoList from "./TodoList";
 
 function TodoTable() {
@@ -36,17 +38,17 @@ function TodoTable() {
         <main id="main-container">
             <nav id="nav-bar">
                 <button className="btn prev" onClick={() => prevDay()}>
-                    {"<"}
+                    {<AiOutlineArrowLeft />}
                 </button>
                 <button className="btn next" onClick={() => nextDay()}>
-                    {">"}
+                    {<AiOutlineArrowRight />}
                 </button>
             </nav>
             <div id="todo-app">
-                <TodoList day={dateArray[0]}></TodoList>
-                <TodoList day={dateArray[1]}></TodoList>
-                <TodoList day={dateArray[2]}></TodoList>
-                <TodoList day={dateArray[3]}></TodoList>
+                <TodoList dateProp={dateArray[0]}></TodoList>
+                <TodoList dateProp={dateArray[1]}></TodoList>
+                <TodoList dateProp={dateArray[2]}></TodoList>
+                <TodoList dateProp={dateArray[3]}></TodoList>
             </div>
         </main>
     );

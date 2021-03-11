@@ -23,7 +23,7 @@ body {
     font-family: Roboto, sans-serif;
     width: 90%;
     height: 100%;
-    word-break: break-all;
+    word-break: break-word;
 }
 
 .icons {
@@ -40,7 +40,7 @@ body {
     border-right: 1px solid gray;
     padding: 0 10px;
     width: 25%;
-    height: 95vh;
+    height: 90vh;
 }
 
 #todo-container {
@@ -94,4 +94,17 @@ h2 {
 
 .past {
     color: gray;
+}
+
+#nav-bar{
+	display:flex;
+	justify-content: space-between;
+}
+
+#nav-bar button {
+	font-family:Roboto,sans-serif;
+	font-size:2rem;
+	border:none;
+	outline:none;
+	background: none;
 }
