@@ -38,7 +38,7 @@ function TodoTable({ setToggle }) {
 
     return (
         <main id="main-container">
-            <nav id="nav-bar">
+            <nav class="nav">
                 <button className="btn prev" onClick={() => prevDay()}>
                     {<AiOutlineArrowLeft />}
                 </button>

@@ -96,23 +96,65 @@ h2 {
     color: gray;
 }
 
-#nav-bar {
+.nav {
     display: flex;
+    width: 100%;
     justify-content: space-between;
 }
 
-#nav-bar button {
+.nav button {
     font-family: Roboto, sans-serif;
     font-size: 2rem;
     border: none;
     outline: none;
     background: none;
+    cursor: pointer;
 }
 
 #main-container {
     padding: 0 15px;
 }
 
-#calendar {
-    padding: 10px;
+.fc {
+    padding: 0 10px;
+    font-family: Roboto, sans-serif;
+}
+
+.fc-toolbar-title {
+    font-size: 3rem !important;
+    font-family: Bebas Neue, sans-serif;
+}
+
+.fc-event {
+    margin: 3px;
+    padding: 3px;
+}
+
+.fc-event-title {
+    white-space: normal;
+}
+
+.fc-button-primary {
+    background-color: #202020 !important;
+    padding: 1px 1px !important;
+}
+
+.fc-day-today {
+    background-color: #ddd !important;
+}
+
+.fc-toolbar-chunk {
+    text-align: center !important;
+}
+
+.fc-return-button {
+    font-size: 1.5rem !important;
+    padding: 0 5px !important;
+    height: 32px !important;
+}
+
+.nav-calendar {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }

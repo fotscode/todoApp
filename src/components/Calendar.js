@@ -1,6 +1,7 @@
-import React from "react";
+import React, { useEffect } from "react";
 import FullCalendar from "@fullcalendar/react";
 import dayGridPlugin from "@fullcalendar/daygrid";
+import { AiOutlineEdit } from "react-icons/ai";
 
 function Calendar({ setToggle }) {
     function allStorage() {
@@ -29,22 +30,45 @@ function Calendar({ setToggle }) {
                 eventArray.push({
                     date,
                     title: todo.text,
+                    breakWord: "break-word",
                 });
             }
         }
         return eventArray;
     }
 
+    useEffect(() => {
+        setTimeout(function () {
+            window.dispatchEvent(new Event("resize"));
+        }, 1);
+    });
+
     let storageArray = allStorage();
     let events = getEventsArray(storageArray);
 
     return (
         <div id="calendar">
-            <button onClick={() => setToggle(true)}>GO BACK</button>
             <FullCalendar
                 plugins={[dayGridPlugin]}
                 initialView="dayGridMonth"
                 events={events}
+                eventBorderColor="gray"
+                eventBackgroundColor="#202020"
+                eventColor="white"
+                //showNonCurrentDates={false}
+                fixedWeekCount={false}
+                height={"98vh"}
+                customButtons={{
+                    return: {
+                        text: <AiOutlineEdit />,
+                        click: () => setToggle(true),
+                    },
+                }}
+                headerToolbar={{
+                    left: "prev",
+                    center: "title,return",
+                    right: "next",
+                }}
             />
         </div>
     );
