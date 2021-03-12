@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineArrowLeft } from "react-icons/ai";
 import { AiOutlineArrowRight } from "react-icons/ai";
+import { AiOutlineCalendar } from "react-icons/ai";
 import TodoList from "./TodoList";
 
 function TodoTable() {
@@ -34,11 +35,18 @@ function TodoTable() {
         auxDate.setDate(auxDate.getDate() - 1);
         setDateObj(auxDate);
     }
+    const showCalendar = () => {
+        console.log("hey");
+    };
+
     return (
         <main id="main-container">
             <nav id="nav-bar">
                 <button className="btn prev" onClick={() => prevDay()}>
                     {<AiOutlineArrowLeft />}
+                </button>
+                <button className="btn calendar" onClick={() => showCalendar()}>
+                    {<AiOutlineCalendar />}
                 </button>
                 <button className="btn next" onClick={() => nextDay()}>
                     {<AiOutlineArrowRight />}
