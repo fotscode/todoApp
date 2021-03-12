@@ -55,7 +55,6 @@ function Calendar({ setToggle }) {
                 eventBorderColor="gray"
                 eventBackgroundColor="#202020"
                 eventColor="white"
-                //showNonCurrentDates={false}
                 fixedWeekCount={false}
                 height={"98vh"}
                 customButtons={{
