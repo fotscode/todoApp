@@ -3,6 +3,8 @@ body {
     margin: 0;
     padding: 0;
     height: 100%;
+    background-color: #202020;
+    color: #efefef;;
 }
 
 .todo-row {
@@ -16,7 +18,7 @@ body {
 
 .complete {
     text-decoration: line-through;
-    color: gray;
+    color: #aaa;
 }
 
 .todo-text {
@@ -27,11 +29,14 @@ body {
 }
 
 .icons {
-    color: gray;
     font-size: 15px;
     display: flex;
     align-items: center;
     gap: 5px;
+}
+
+.btn{
+    color: #efefef;
 }
 
 #day-container {
@@ -60,7 +65,7 @@ body {
     border: none;
     width: 25px;
     height: 25px;
-    color: gray;
+    color: #aaa;
     outline: none;
     background: none;
     font-size: 20px;
@@ -77,8 +82,12 @@ body {
     border-bottom: 1px solid gray;
     font-family: Roboto, sans-serif;
     font-size: 1rem;
+    background-color: #202020;
+    color:#efefef;
     outline: none;
 }
+
+
 
 h1 {
     font-family: Bebas Neue, sans-serif;
@@ -93,7 +102,7 @@ h2 {
 }
 
 .past {
-    color: gray;
+    color: #999;
 }
 
 .nav {
@@ -118,6 +127,8 @@ h2 {
 .fc {
     padding: 0 10px;
     font-family: Roboto, sans-serif;
+    background-color: #202020;
+    color:#efefef;
 }
 
 .fc-toolbar-title {
@@ -132,12 +143,13 @@ h2 {
 }
 
 .fc-button-primary {
-    background-color: #202020 !important;
+    background-color: #efefef !important;
+    color:#202020 !important;
     padding: 1px 1px !important;
 }
 
 .fc-day-today {
-    background-color: #ddd !important;
+    background-color: #555 !important;
 }
 
 .fc-toolbar-chunk {
@@ -154,4 +166,8 @@ h2 {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+}
+
+.fc-popover{
+    background-color: #555 !important;
 }
