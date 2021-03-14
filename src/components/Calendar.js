@@ -50,13 +50,14 @@ function Calendar({ setToggle }) {
         <div id="calendar">
             <FullCalendar
                 plugins={[dayGridPlugin]}
-                initialView="dayGridMonth"
+                initialView={"dayGridMonth"}
                 events={events}
-                eventBorderColor="gray"
-                eventBackgroundColor="#202020"
-                eventColor="white"
+                eventBorderColor={"gray"}
+                eventBackgroundColor={"#202020"}
+                eventColor={"white"}
                 fixedWeekCount={false}
                 height={"98vh"}
+                dayMaxEvents={true}
                 customButtons={{
                     return: {
                         text: <AiOutlineEdit />,
