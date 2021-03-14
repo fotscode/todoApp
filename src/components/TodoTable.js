@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlineArrowLeft } from "react-icons/ai";
-import { AiOutlineArrowRight } from "react-icons/ai";
+import { BsChevronLeft } from "react-icons/bs";
+import { BsChevronRight } from "react-icons/bs";
 import { AiOutlineCalendar } from "react-icons/ai";
 import TodoList from "./TodoList";
 
@@ -40,7 +40,7 @@ function TodoTable({ setToggle }) {
         <main id="main-container">
             <nav class="nav">
                 <button className="btn prev" onClick={() => prevDay()}>
-                    {<AiOutlineArrowLeft />}
+                    {<BsChevronLeft />}
                 </button>
                 <button
                     className="btn calendar"
@@ -49,7 +49,7 @@ function TodoTable({ setToggle }) {
                     {<AiOutlineCalendar />}
                 </button>
                 <button className="btn next" onClick={() => nextDay()}>
-                    {<AiOutlineArrowRight />}
+                    {<BsChevronRight />}
                 </button>
             </nav>
             <div id="todo-app">
