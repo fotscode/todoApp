@@ -1,173 +1,176 @@
 html,
 body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    background-color: #202020;
-    color: #efefef;;
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	background-color: #202020;
+	color: #efefef;;
 }
 
 .todo-row {
-    display: flex;
-    justify-content: space-between;
-    border-bottom: 1px solid #dfdfdf;
-    align-items: center;
-    text-align: left;
-    padding: 5px;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid #dfdfdf;
+	align-items: center;
+	text-align: left;
+	padding: 5px;
 }
 
 .complete {
-    text-decoration: line-through;
-    color: #aaa;
+	text-decoration: line-through;
+	color: #aaa;
 }
 
 .todo-text {
-    font-family: Roboto, sans-serif;
-    width: 90%;
-    height: 100%;
-    word-break: break-word;
+	font-family: Roboto, sans-serif;
+	width: 90%;
+	height: 100%;
+	word-break: break-word;
 }
 
 .icons {
-    font-size: 15px;
-    display: flex;
-    align-items: center;
-    gap: 5px;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	gap: 5px;
 }
 
 .btn{
-    color: #efefef;
+	color: #efefef;
 }
 
 #day-container {
-    gap: 10px;
-    border-left: 1px solid gray;
-    border-right: 1px solid gray;
-    padding: 0 10px;
-    width: 25%;
-    min-height: 90vh;
+	gap: 10px;
+	border-left: 1px solid gray;
+	border-right: 1px solid gray;
+	padding: 0 10px;
+	width: 25%;
+	min-height: 90vh;
 }
 
 #todo-container {
-    display: grid;
-    gap: 5px;
+	display: grid;
+	gap: 5px;
 }
 
 #todo-app {
-    display: flex;
-    gap: 5px;
-    width: 100%;
-    height: 100%;
+	display: flex;
+	gap: 5px;
+	width: 100%;
+	height: 100%;
 }
 
 .todo-button {
-    border-radius: 50%;
-    border: none;
-    width: 25px;
-    height: 25px;
-    color: #aaa;
-    outline: none;
-    background: none;
-    font-size: 20px;
+	border-radius: 50%;
+	border: none;
+	width: 25px;
+	height: 25px;
+	color: #aaa;
+	outline: none;
+	background: none;
+	font-size: 20px;
 }
 
 .todo-form {
-    display: flex;
-    gap: 5px;
+	display: flex;
+	gap: 5px;
 }
 
 .todo-input {
-    width: 90%;
-    border: none;
-    border-bottom: 1px solid gray;
-    font-family: Roboto, sans-serif;
-    font-size: 1rem;
-    background-color: #202020;
-    color:#efefef;
-    outline: none;
+	width: 90%;
+	border: none;
+	border-bottom: 1px solid gray;
+	font-family: Roboto, sans-serif;
+	font-size: 1rem;
+	background-color: #202020;
+	color:#efefef;
+	outline: none;
 }
 
 
 
 h1 {
-    font-family: Bebas Neue, sans-serif;
-    text-align: center;
-    font-size: 2.5rem;
+	font-family: Bebas Neue, sans-serif;
+	text-align: center;
+	font-size: 2.5rem;
 }
 
 h2 {
-    text-align: center;
-    font-size: 1rem;
-    font-family: Roboto, sans-serif;
+	text-align: center;
+	font-size: 1rem;
+	font-family: Roboto, sans-serif;
 }
 
 .past {
-    color: #999;
+	color: #999;
 }
 
 .nav {
-    display: flex;
-    width: 100%;
-    justify-content: space-between;
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
 }
 
 .nav button {
-    font-family: Roboto, sans-serif;
-    font-size: 2rem;
-    border: none;
-    outline: none;
-    background: none;
-    cursor: pointer;
+	font-family: Roboto, sans-serif;
+	font-size: 2rem;
+	border: none;
+	outline: none;
+	background: none;
+	cursor: pointer;
 }
 
 #main-container {
-    padding: 0 15px;
+	padding: 0 15px;
 }
 
 .fc {
-    padding: 0 10px;
-    font-family: Roboto, sans-serif;
-    background-color: #202020;
-    color:#efefef;
+	padding: 0 10px;
+	font-family: Roboto, sans-serif;
+	background-color: #202020;
+	color:#efefef;
 }
 
 .fc-toolbar-title {
-    font-size: 3rem !important;
-    font-family: Bebas Neue, sans-serif;
+	font-size: 3rem !important;
+	font-family: Bebas Neue, sans-serif;
 }
 
-
-
 .fc-event-title {
-    white-space: normal;
+	white-space: normal;
+	color:#202020;
+}
+
+.fc-event-main{
+	background-color:#efefef;
 }
 
 .fc-button-primary {
-    background-color: #efefef !important;
-    color:#202020 !important;
-    padding: 1px 1px !important;
+	background-color: #efefef !important;
+	color:#202020 !important;
+	padding: 1px 1px !important;
 }
 
 .fc-day-today {
-    background-color: #555 !important;
+	background-color: #555 !important;
 }
 
 .fc-toolbar-chunk {
-    text-align: center !important;
+	text-align: center !important;
 }
 
 .fc-return-button {
-    font-size: 1.5rem !important;
-    padding: 0 5px !important;
-    height: 32px !important;
+	font-size: 1.5rem !important;
+	padding: 0 5px !important;
+	height: 32px !important;
 }
 
 .nav-calendar {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
 }
 
 .fc-popover{
-    background-color: #555 !important;
+	background-color: #555 !important;
 }
