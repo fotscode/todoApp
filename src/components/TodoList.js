@@ -5,7 +5,7 @@ import Todo from "./Todo";
 function TodoList({ dateProp }) {
   const searchStorage = (date) => {
     let storage = JSON.parse(
-      localStorage.getItem(date.toLocaleDateString())
+      localStorage.getItem(date.toLocaleDateString("es-ES"))
     );
     if (storage) return storage;
     return [];
@@ -13,7 +13,7 @@ function TodoList({ dateProp }) {
 
   const lookMaxId = (date) => {
     let storage = JSON.parse(
-      localStorage.getItem(date.toLocaleDateString())
+      localStorage.getItem(date.toLocaleDateString("es-ES"))
     );
     if (!storage) return 0;
     let max = -1;
@@ -36,7 +36,7 @@ function TodoList({ dateProp }) {
     if (!todo.text || /^\s*$/.test(todo.text)) return;
     const newTodos = [...todos, todo];
     localStorage.setItem(
-      dateState.toLocaleDateString(),
+      dateState.toLocaleDateString("es-ES"),
       JSON.stringify(newTodos)
     );
     setTodos(newTodos);
@@ -46,12 +46,12 @@ function TodoList({ dateProp }) {
   const removeTodo = (id) => {
     let removeArr = [...todos].filter((todo) => todo.id !== id);
     localStorage.setItem(
-      dateState.toLocaleDateString(),
+      dateState.toLocaleDateString("es-ES"),
       JSON.stringify(removeArr)
     );
 
     if (!removeArr.length)
-      localStorage.removeItem(dateState.toLocaleDateString());
+      localStorage.removeItem(dateState.toLocaleDateString("es-ES"));
     setTodos(removeArr);
   };
 
