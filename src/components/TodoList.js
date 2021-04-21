@@ -63,7 +63,7 @@ function TodoList({ dateProp }) {
       return todo;
     });
     localStorage.setItem(
-      dateState.toLocaleDateString(),
+      dateState.toLocaleDateString("es-ES"),
       JSON.stringify(updatedTodos)
     );
     setTodos(updatedTodos);
